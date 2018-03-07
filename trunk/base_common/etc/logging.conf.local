@@ -1,0 +1,31 @@
+qlog.appender.stdout=ConsoleAppender
+qlog.appender.stdout.Threshold=ALL
+qlog.appender.stdout.ImmediateFlush=TRUE
+qlog.appender.stdout.layout = PatternLayout
+qlog.appender.stdout.layout.ConversionPattern = %D:%d{%q} [%-5p][%5P:%14t] <%F:%L> %c %x - %m%n
+
+qlog.appender.file=FileAppender
+qlog.appender.file.File=./log/local.log
+qlog.appender.file.ImmediateFlush=TRUE
+qlog.appender.file.layout = PatternLayout
+qlog.appender.file.layout.ConversionPattern = %D:%d{%q} [%-5p][%5P:%14t] <%F:%L> %c %x - %m%n
+
+qlog.appender.rollingfile=RollingFileAppender
+qlog.appender.rollingfile.File=./log/local.log
+qlog.appender.rollingfile.MaxFileSize=100000
+qlog.appender.rollingfile.ImmediateFlush=TRUE
+qlog.appender.rollingfile.layout = PatternLayout
+qlog.appender.rollingfile.layout.ConversionPattern = %D:%d{%q} [%-5p][%5P:%14t] <%F:%L> %c %x - %m%n
+
+qlog.appender.dailyrollingfile=DailyRollingFileAppender
+qlog.appender.dailyrollingfile.File=./log/local.log
+qlog.appender.dailyrollingfile.Schedule=DAILY
+qlog.appender.dailyrollingfile.ImmediateFlush=TRUE
+qlog.appender.dailyrollingfile.layout = PatternLayout
+qlog.appender.dailyrollingfile.layout.ConversionPattern = %D:%d{%q} [%-5p][%5P:%14t] <%F:%L> %c %x - %m%n
+qlog.appender.dailyrollingfile.maxbackupindex= 15
+
+qlog.rootLogger=ALL, stdout, file
+#qlog.rootLogger=ERROR, stdout, file
+#qlog.rootLogger=INFO, stdout, file
+#qlog.rootLogger=DEBUG, stdout, file
